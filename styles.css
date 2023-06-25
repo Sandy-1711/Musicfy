@@ -1,0 +1,786 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+
+}
+
+body {
+    background-color: var(--white);
+}
+
+:root {
+    --white: #fafafa;
+}
+
+.sidebar {
+    /* background-color: blueviolet; */
+    position: fixed;
+    min-width: 15dvw;
+    /* padding-right: 18rem; */
+    height: 100dvh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* flex-direction: column; */
+    z-index: 9999;
+    border-right: 2px solid grey;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 3rem;
+    font-size: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+ul li a {
+    display: flex;
+    text-decoration: none;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    color: grey;
+}
+
+ul li a:hover {
+    color: black;
+}
+
+li svg {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.sidebar h1 {
+    position: absolute;
+    top: 2rem;
+    left: 3rem;
+}
+
+.homePage {
+    position: absolute;
+    left: 15dvw;
+    top: 0;
+    width: 85dvw;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    gap: 1rem;
+    /* background-color: aquamarine; */
+    justify-content: center;
+    align-items: center;
+    /* overflow-y: scroll; */
+}
+
+.cardsContainer {
+    width: 75dvw;
+    padding: 2rem 2rem;
+    border-radius: 10px;
+    overflow-x: scroll;
+    border: 2px solid rgb(226, 225, 225);
+}
+
+.cardsContainer h2 {
+    position: sticky;
+    left: 1rem;
+    /* bottom: 1rem; */
+    font-size: 1.8rem;
+    color: rgb(80, 80, 80);
+}
+
+.cardsContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.cards {
+
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+
+}
+
+.card {
+    padding: 1rem 0;
+    width: 15rem;
+    height: 22rem;
+    /* height:max-content; */
+    margin: 1rem;
+    /* background-color: aqua; */
+    text-align: center;
+    border: 2px solid rgb(226, 225, 225);
+    border-radius: 5px;
+    background-color: #e2e2e2;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.card::-webkit-scrollbar {
+    display: none;
+}
+
+.cards::-webkit-scrollbar {
+    display: none;
+}
+
+.card h3 {
+    width: 13rem;
+    margin: auto;
+    /* word-wrap:normal; */
+    word-break: break-all;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 900;
+    color: rgb(73, 73, 73);
+    text-align: left;
+}
+
+/* .cardInfo{
+    margin-top: 1rem;
+} */
+.cardInfo p {
+    text-align: left;
+    width: 13rem;
+    margin: auto;
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: #5b5b5b;
+}
+
+.card img {
+    box-shadow: 0px 0px 15px 0px black;
+    border-radius: 5px;
+    height: 13rem;
+    width: 13rem;
+    object-fit: cover;
+}
+
+.like {
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    opacity: 0;
+    color: rgb(73, 73, 73);
+    ;
+    z-index: 1;
+    transition: 1s linear ease-in-out;
+
+}
+
+.card:hover {
+    background: #d5d5d5;
+}
+
+.card:hover .like {
+
+    opacity: 1;
+}
+
+.like svg {
+    font-size: 2.5rem;
+}
+
+.like:hover svg {
+    color: rgb(241, 50, 50);
+}
+
+.play {
+    position: absolute;
+    color: #434343;
+    bottom: 0.5rem;
+    right: 1rem;
+    z-index: 1;
+    opacity: 0;
+    transition: 1s linear ease-in-out;
+}
+
+.card:hover .play {
+    opacity: 1;
+}
+
+.play svg {
+    font-size: 3rem;
+}
+
+.play svg:hover {
+    transition: 0.1s ease-in-out;
+    color: rgb(241, 50, 50);
+}
+
+.searchPage {
+    position: absolute;
+    left: 15dvw;
+    top: 0;
+    width: 85dvw;
+    padding: 3rem;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* background-color: aquamarine; */
+    justify-content: flex-start;
+    align-items: center;
+    /* overflow-y: scroll; */
+}
+
+.searchArea {
+    width: 36.5rem;
+    height: 2dvh;
+    position: relative;
+}
+
+.searchArea form {
+    width: 100%;
+    height: max-content;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.searchArea input {
+    width: 35rem;
+    padding: 1rem 10rem 1rem 1rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid grey;
+    outline: none;
+    z-index: 12;
+
+}
+
+.searchArea:hover~.suggestions {
+    display: block;
+}
+
+.suggestions:hover {
+    display: block;
+}
+
+.searchArea button {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1px solid grey;
+    outline: none;
+    position: relative;
+    right: 0.05rem;
+    padding: 0.7rem;
+    z-index: 12;
+
+}
+
+.searchArea button:hover {
+    background-color: #c7c7c7;
+}
+
+.suggestions {
+    display: none;
+    position: relative;
+    top: 0.6rem;
+    width: 36rem;
+    height: max-content;
+    /* border-radius: 5px; */
+    z-index: 10;
+    background-color: var(--white);
+}
+
+.suggestiontext {
+    border: 1px solid rgb(194, 194, 194);
+    border-top: 0;
+
+    padding: 1rem;
+    color: rgb(169, 169, 169);
+}
+
+.suggestiontext:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.suggestiontext:hover {
+    background-color: rgb(231, 231, 231);
+}
+
+.searchContainer {
+    position: absolute;
+    top: 10rem;
+    width: 75dvw;
+}
+
+.searchContainer h3 {
+    font-size: 1.2rem;
+    color: #434343;
+}
+
+.searchPage .cards {
+    grid-template-columns: repeat(5, 1fr)
+}
+
+.favCardsContainer {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.playlist {
+    position: absolute;
+    left: 1.5rem;
+    bottom: 0.9rem;
+    color: rgb(91, 91, 91);
+    z-index: 1;
+    border-radius: 50%;
+    padding: 0.3rem;
+    background-color: white;
+    opacity: 0;
+    transition: 1s linear ease-in-out;
+}
+
+.card:hover .playlist {
+    opacity: 1;
+}
+
+.playlist svg {
+    font-size: 2rem;
+    display: flex;
+}
+
+.playlist:hover {
+    background-color: #434343;
+    color: white;
+}
+
+.playlistlist {
+    position: fixed;
+    left: 60rem;
+    top: 25rem;
+    padding: 3rem 1rem;
+    background-color: #7f7f7f;
+    border: 1px solid grey;
+    border-radius: 5px;
+    z-index: 9999;
+    /* transition: 3s linear ease-in-out; */
+}
+
+.playlistlist button {
+    width: 15rem;
+    padding: 1rem 1rem;
+    margin: auto;
+}
+
+.playlistlist ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.playlistlist ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c7c7c7;
+    padding: 0.5rem 0.3rem 0.5rem 0.8rem;
+    font-size: 1.5rem;
+    /* font-weight: 900; */
+}
+
+.playlistlist ul li:hover {
+    background-color: rgb(174, 174, 174);
+}
+
+.clear {
+    position: absolute;
+    right: 0.5rem;
+    color: var(--white);
+    top: 0.5rem;
+}
+
+.clear:hover {
+    color: red;
+}
+
+.playlistlist {
+    display: flex;
+    flex-direction: column;
+}
+
+.playlistlist input {
+    padding: 1rem;
+    outline: none;
+}
+
+.playlistCardsContainer {
+    position: relative;
+}
+
+.playlistPagePlaylist {
+    position: absolute;
+    width: 3rem;
+
+    right: 0.5rem;
+    top: 0.5rem;
+    color: rgb(91, 91, 91);
+    z-index: 1;
+    padding: 0.3rem;
+}
+
+.playlistPagePlaylist svg {
+    font-size: 2.5rem;
+    color: #434343;
+}
+
+.plpagelistlist {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 3rem;
+    top: 5rem;
+    padding: 3rem 1rem;
+    background-color: #7f7f7f;
+    border: 1px solid grey;
+    border-radius: 5px;
+    z-index: 9999;
+}
+
+.plpagelistlist input {
+    padding: 1rem;
+}
+
+.plpagelistlist button {
+    padding: 1rem;
+}
+
+.playlistcard {
+    height: 21rem;
+}
+
+.playlistplay {
+    bottom: 0rem;
+    right: 2rem;
+}
+
+.playlistcard:hover {
+    background-color: #c5c5c5;
+}
+
+.playlistcard:hover img {
+    opacity: 0.7;
+}
+
+/* .playlistCardContainer{
+    grid-template-columns: repeat(5,1fr);
+} */
+.delete {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 1rem;
+    color: #434343;
+    opacity: 0;
+}
+
+.card:hover .delete {
+    opacity: 1;
+}
+
+.delete svg {
+    font-size: 2.9rem;
+}
+
+.delete svg:hover {
+    color: rgb(206, 20, 20);
+}
+
+.playlistdelete {
+    bottom: 0rem;
+    left: 2rem;
+}
+
+.playlistCardInfo h2 {
+    margin-top: 0.4rem;
+}
+
+.suggestiontext p {
+    color: #646464;
+    font-weight: 200;
+}
+
+
+@media screen and (width<1000px) {
+    .sidebar {
+        bottom: 0;
+        height: 4rem;
+        width: 100dvw;
+        padding: 0;
+        padding-top: 1rem;
+        left: 0;
+        flex-direction: column;
+        border: none;
+        border-top: 2px solid #646464;
+        z-index: 9;
+        background-color: var(--white);
+    }
+
+    .sidebar ul {
+        flex-direction: row;
+        gap: 4rem;
+        padding: 0;
+        padding-bottom: 1rem;
+    }
+
+    .sidebar ul li a span {
+        font-size: 0.5rem;
+    }
+
+    .sidebar h1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        /* width: 100dvw;
+        margin: auto; */
+        color: #383838;
+        z-index: 99;
+        height: max-content;
+        width: 100dvw;
+        padding: 1rem;
+        background-color: #646464;
+    }
+
+    .sidebar ul li a {
+        display: flex;
+        gap: 0;
+        /* font-size: 0.2rem; */
+        flex-direction: column;
+    }
+
+    .homePage {
+        top: 1rem;
+        left: 0;
+        width: 100dvw;
+    }
+
+    .cardsContainer {
+        width: 95dvw;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        padding: 1rem;
+        z-index: 2;
+    }
+
+    .cardsContainer h2 {
+        font-size: 1.25rem;
+    }
+
+    .cards {
+        grid-template-columns: repeat(5, 1fr)
+    }
+
+    .card {
+        padding: 0.5rem 0rem;
+        width: 10rem;
+        height: 18rem;
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+
+    .card img {
+        height: 9rem;
+        width: 9rem;
+    }
+
+    .card h3,
+    .cardInfo p {
+        width: 9rem;
+        font-size: 0.7rem;
+    }
+
+    .like {
+        opacity: 1;
+        right: 0.5rem;
+        top: 0.25rem;
+    }
+
+    .like svg {
+        font-size: 1.5rem;
+    }
+
+    .play,
+    .playlist {
+        opacity: 1;
+    }
+
+    .play svg {
+        font-size: 1.5rem;
+    }
+
+    .playlist {
+        left: 1rem;
+        bottom: 0.7rem;
+    }
+
+    .playlist svg {
+        font-size: 0.8rem;
+    }
+
+    .playlistPagePlaylist {
+        width: 2rem;
+    }
+
+    .playlistPagePlaylist svg {
+        font-size: 2rem;
+    }
+
+    .playlistcard {
+        height: 13rem;
+    }
+
+    .delete {
+        opacity: 1;
+        bottom: 1rem;
+        left: 1rem;
+    }
+
+    .delete svg {
+
+        font-size: 1.5rem;
+    }
+
+    .playlistplay {
+        right: 1rem;
+        bottom: 1rem;
+    }
+/* 
+    .searchPage {
+        top: 1rem;
+        left: 0;
+        width: 100dvw;
+        padding: 0;
+        height: max-content;
+        top: 5rem;
+    } */
+
+    .searchArea {
+        width: max-content;
+    }
+    .searchArea form{
+        height: max-content;
+    }
+    .searchArea form input{
+        width: 15rem;
+        padding-right: 1rem;
+    }
+    .suggestions{
+        width: 18rem;
+        
+    }
+    /* .homecard{
+        grid-template-columns: repeat(10,1fr)
+    } */
+}
+
+@media screen and (width<950px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (width<835px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
+@media screen and (width<635px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (width<=540px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (width<500px) {
+    .cards {
+
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+        padding: 0.5rem 0rem;
+        width: 8rem;
+        height: 14rem;
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+
+    .card img {
+        height: 7rem;
+        width: 7rem;
+    }
+
+    .card h3,
+    .cardInfo p {
+        width: 7rem;
+        font-size: 0.5rem;
+    }
+
+    .sidebar {
+        padding: 0;
+
+        height: max-content;
+    }
+
+    .sidebar ul {
+        padding: 0.2rem 0;
+        gap: 1.7rem;
+    }
+
+    .sidebar h1 {
+        padding: 0.5rem;
+    }
+
+}
+
+@media screen and (width<450px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (width<400px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .card{
+        height: 15rem;
+        width: 10rem;
+    }
+    .card img{
+        height: 8rem;
+        width: 8rem;
+    }
+}
+@media screen and (width<300px) {
+    .card {
+        padding: 0.5rem 0rem;
+        width: 8rem;
+        height: 14rem;
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+
+    .card img {
+        height: 7rem;
+        width: 7rem;
+    }
+
+}
