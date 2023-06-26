@@ -527,8 +527,10 @@ li svg {
     }
 
     .sidebar ul {
+        width: 80dvw;
+        justify-content: space-around;
         flex-direction: row;
-        gap: 4rem;
+        /* gap: 4rem; */
         padding: 0;
         padding-bottom: 1rem;
     }
