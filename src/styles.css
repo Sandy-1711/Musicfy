@@ -548,7 +548,7 @@ li svg {
         height: max-content;
         width: 100dvw;
         padding: 1rem;
-        background-color: #646464;
+        background-color: #c5c5c5;
     }
 
     .sidebar ul li a {
@@ -559,7 +559,7 @@ li svg {
     }
 
     .homePage {
-        top: 1rem;
+        top: 2rem;
         left: 0;
         width: 100dvw;
     }
@@ -740,12 +740,16 @@ li svg {
     }
 
     .sidebar ul {
-        padding: 0.2rem 0;
-        gap: 1.7rem;
+        padding: 0.9rem 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 2rem;
+        width: 80dvw;
     }
 
     .sidebar h1 {
-        padding: 0.5rem;
+        padding: 1.3rem 0.5rem;
     }
 
 }
