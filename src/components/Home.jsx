@@ -63,12 +63,12 @@ const Home = () => {
                 <div className='cardsContainer'>
                     <h2>Global Top 20</h2>
                     <div className='cards'>
-                        {global.tracks && global.tracks.map(function (element) {
+                        {global.tracks ? global.tracks.map(function (element) {
                             return <CreateCard
                                 element={element}
                                 setSelectedSongs={setSelectedSongs}
                                 setShowPlaylists={setShowPlaylists} />
-                        })}
+                        }):<div className='cardsContainer'><h1>No songs found</h1></div>}
                     </div>
                 </div>
                 {
@@ -85,14 +85,14 @@ const Home = () => {
                                             setShowPlaylists={setShowPlaylists}
                                         />
                                     })}
-                                </div> : <div><h1>No favorites</h1></div>
+                                </div> : <div className='cardsContainer'><h1>No favorites</h1></div>
                         }
                     </div>
                 }
 
                 <div className='cardsContainer'>
                     <h2>Playlists</h2>
-                    {playlists[0] ?
+                    {playlists ?
 
                         <div className='cards'>
                             {playlists.map(function (element) {
@@ -100,7 +100,7 @@ const Home = () => {
                                     element={element}
                                 />
                             })}
-                        </div> : <div><h1>No Playlists found</h1></div>
+                        </div> : <div className='cardsContainer'><h1>No Playlists found</h1></div>
                     }
                 </div>
                 {
