@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Musicfy/static/css/main.3e069d1c.css",
-    "main.js": "/Musicfy/static/js/main.26856589.js",
+    "main.js": "/Musicfy/static/js/main.41de26d3.js",
     "index.html": "/Musicfy/index.html",
     "main.3e069d1c.css.map": "/Musicfy/static/css/main.3e069d1c.css.map",
-    "main.26856589.js.map": "/Musicfy/static/js/main.26856589.js.map"
+    "main.41de26d3.js.map": "/Musicfy/static/js/main.41de26d3.js.map"
   },
   "entrypoints": [
     "static/css/main.3e069d1c.css",
-    "static/js/main.26856589.js"
+    "static/js/main.41de26d3.js"
   ]
 }
