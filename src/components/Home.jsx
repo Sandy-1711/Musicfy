@@ -6,7 +6,7 @@ import CreateCard from './CreateCard';
 import CreatePlaylist from './CreatePlaylist';
 const Home = () => {
 
-    var [global, setGlobal] = useState("");
+    var [global, setGlobal] = useState(fetchData)
     var [showPlaylists, setShowPlaylists] = useState(false);
     var [selectedSongs, setSelectedSongs] = useState();
     var [showCreatePlaylist, setShowCreatePlaylist] = useState(false);
