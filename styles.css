@@ -850,7 +850,9 @@ button {
     }
 
 }
-
+.sp{
+    padding-bottom: 3rem;
+}
 @media screen and (width<450px) {
     .cards {
         grid-template-columns: repeat(3, 1fr);
