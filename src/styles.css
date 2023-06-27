@@ -807,7 +807,9 @@ button {
         grid-template-columns: repeat(4, 1fr);
     }
     .loginPage{
-        width: 90dvw;
+        height: 90dvh;
+        width:100dvw;
+        position: relative;
     }
     .playlistlist{
         left: 40%;
@@ -842,7 +844,10 @@ button {
 }
 
 @media screen and (width<500px) {
-    .cards {
+    
+    .loginCard{
+        padding: 5rem 2rem;
+    }.cards {
 
         grid-template-columns: repeat(3, 1fr);
     }
