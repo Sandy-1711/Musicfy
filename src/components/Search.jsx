@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import SearchIcon from '@mui/icons-material/Search'; 
+import SearchIcon from '@mui/icons-material/Search';
 // import Sidebar from './Sidebar';
 import ClearIcon from '@mui/icons-material/Clear';
 import CreateCard from './CreateCard';
@@ -23,7 +23,7 @@ const Search = () => {
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': '44493296c0msh587bb936b158d9ep1d5245jsn8293b71897be',
+                'X-RapidAPI-Key': '33b8c5e176msha49eebb3918b78fp141637jsn0b4810f708b5',
                 'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
             }
         };
@@ -41,7 +41,7 @@ const Search = () => {
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': '44493296c0msh587bb936b158d9ep1d5245jsn8293b71897be',
+                'X-RapidAPI-Key': '33b8c5e176msha49eebb3918b78fp141637jsn0b4810f708b5',
                 'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
             }
         };

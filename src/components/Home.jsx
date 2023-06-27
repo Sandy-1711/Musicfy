@@ -6,7 +6,7 @@ import CreateCard from './CreateCard';
 import CreatePlaylist from './CreatePlaylist';
 const Home = () => {
 
-    var [global, setGlobal] = useState(fetchData);
+    var [global, setGlobal] = useState("");
     var [showPlaylists, setShowPlaylists] = useState(false);
     var [selectedSongs, setSelectedSongs] = useState();
     var [showCreatePlaylist, setShowCreatePlaylist] = useState(false);
@@ -42,7 +42,7 @@ const Home = () => {
         await fetch('https://shazam.p.rapidapi.com/charts/track?locale=en-US&pageSize=20&startFrom=0', {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': '44493296c0msh587bb936b158d9ep1d5245jsn8293b71897be',
+                'X-RapidAPI-Key': '33b8c5e176msha49eebb3918b78fp141637jsn0b4810f708b5',
                 'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
             }
         }).then(async function (response) {
@@ -68,7 +68,7 @@ const Home = () => {
                                 element={element}
                                 setSelectedSongs={setSelectedSongs}
                                 setShowPlaylists={setShowPlaylists} />
-                        }):<div className='cardsContainer'><h1>No songs found</h1></div>}
+                        }) : <div className='cardsContainer'><h1>No songs found</h1></div>}
                     </div>
                 </div>
                 {

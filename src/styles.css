@@ -510,7 +510,90 @@ li svg {
     font-weight: 200;
 }
 
+.logout {
+    position: absolute;
+    bottom: 5rem;
+    left: 3rem;
+}
 
+.loginPage form input,
+button {
+    font-size: 1.1rem;
+}
+
+.loginPage button,.logout button {
+    cursor: pointer;
+    padding: 0.75rem 1.25rem;
+    border-radius: 5px;
+    /* border: none; */
+    border: 1px solid grey;
+    outline: none;
+    background-color: rgb(181, 181, 181);
+    color: black;
+}
+
+.loginCard form input {
+    padding: 0.75rem 1.25rem;
+    border-radius: 5px;
+    /* border: none; */
+    border: 1px solid grey;
+    outline: none;
+}
+
+.loginPage button:hover {
+    background-color: #595959;
+    color: #c7c7c7;
+}
+.logout button:hover{
+    
+    background-color: #595959;
+    color: #c7c7c7;
+}
+.loginCard form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.loginPage {
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.loginCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #ffffff;
+    border: 1px solid grey;
+    padding: 10rem 5rem;
+    border-radius: 5px;
+}
+
+.loginCard span a{
+    color: #434343;
+    cursor: pointer;
+}
+.loginCard span a:hover{
+    color: red;;
+}
+.loginPage h2{
+    font-size: 1.75rem;
+    color: #2b2b2b;
+    margin-bottom: 1rem;
+}
+.loginCard span a,span {
+    font-size: 1.2rem;
+}
+
+/* .homePage form input,button{
+    padding: 0.5rem;
+} */
 @media screen and (width<1000px) {
     .sidebar {
         bottom: 0;
@@ -538,7 +621,14 @@ li svg {
     .sidebar ul li a span {
         font-size: 0.5rem;
     }
-
+    
+    .logout button{
+        position: fixed;
+        right:   1rem;
+        top: 0.7rem;
+        padding:0.5rem 1rem;
+        z-index: 99;
+    }
     .sidebar h1 {
         position: fixed;
         top: 0;
@@ -656,7 +746,8 @@ li svg {
         right: 1rem;
         bottom: 1rem;
     }
-/* 
+
+    /* 
     .searchPage {
         top: 1rem;
         left: 0;
@@ -669,17 +760,21 @@ li svg {
     .searchArea {
         width: max-content;
     }
-    .searchArea form{
+
+    .searchArea form {
         height: max-content;
     }
-    .searchArea form input{
+
+    .searchArea form input {
         width: 15rem;
         padding-right: 1rem;
     }
-    .suggestions{
+
+    .suggestions {
         width: 18rem;
-        
+
     }
+
     /* .homecard{
         grid-template-columns: repeat(10,1fr)
     } */
@@ -766,15 +861,18 @@ li svg {
     .cards {
         grid-template-columns: repeat(2, 1fr);
     }
-    .card{
+
+    .card {
         height: 15rem;
         width: 10rem;
     }
-    .card img{
+
+    .card img {
         height: 8rem;
         width: 8rem;
     }
 }
+
 @media screen and (width<300px) {
     .card {
         padding: 0.5rem 0rem;
