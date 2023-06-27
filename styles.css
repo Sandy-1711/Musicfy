@@ -69,6 +69,7 @@ li svg {
     top: 0;
     width: 85dvw;
     padding: 3rem;
+    padding-bottom: 5rem;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -357,8 +358,9 @@ li svg {
 
 .playlistlist {
     position: fixed;
-    left: 60rem;
-    top: 25rem;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
     padding: 3rem 1rem;
     background-color: #7f7f7f;
     border: 1px solid grey;
@@ -439,8 +441,8 @@ li svg {
     position: absolute;
     display: flex;
     flex-direction: column;
-    right: 3rem;
-    top: 5rem;
+    right: 7rem;
+    top: 7rem;
     padding: 3rem 1rem;
     background-color: #7f7f7f;
     border: 1px solid grey;
@@ -590,10 +592,24 @@ button {
 .loginCard span a,span {
     font-size: 1.2rem;
 }
-
+.ppp{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pp{
+    position: absolute;
+    display: block;
+}
 /* .homePage form input,button{
     padding: 0.5rem;
 } */
+
 @media screen and (width<1000px) {
     .sidebar {
         bottom: 0;
@@ -605,7 +621,7 @@ button {
         flex-direction: column;
         border: none;
         border-top: 2px solid #646464;
-        z-index: 9;
+        z-index: 99;
         background-color: var(--white);
     }
 
@@ -651,7 +667,7 @@ button {
     }
 
     .homePage {
-        top: 2rem;
+        top: 4rem;
         left: 0;
         width: 100dvw;
     }
@@ -774,15 +790,29 @@ button {
         width: 18rem;
 
     }
+    .searchContainer{
+        padding-bottom: 5rem;
+    }
 
     /* .homecard{
         grid-template-columns: repeat(10,1fr)
     } */
+    .playlistlist{
+        left: 40%;
+    }
 }
 
 @media screen and (width<950px) {
     .cards {
         grid-template-columns: repeat(4, 1fr);
+    }
+    .loginPage{
+        height: 90dvh;
+        width:100dvw;
+        position: relative;
+    }
+    .playlistlist{
+        left: 40%;
     }
 }
 
@@ -790,12 +820,17 @@ button {
     .cards {
         grid-template-columns: repeat(4, 1fr);
     }
-
+    .playlistlist{
+        left: 35%;
+    }
 }
 
 @media screen and (width<635px) {
     .cards {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .playlistlist{
+        left: 30%;
     }
 }
 
@@ -803,10 +838,16 @@ button {
     .cards {
         grid-template-columns: repeat(3, 1fr);
     }
+    .playlistlist{
+        left: 20%;
+    }
 }
 
 @media screen and (width<500px) {
-    .cards {
+    
+    .loginCard{
+        padding: 5rem 2rem;
+    }.cards {
 
         grid-template-columns: repeat(3, 1fr);
     }
@@ -850,9 +891,7 @@ button {
     }
 
 }
-.sp{
-    padding-bottom: 3rem;
-}
+
 @media screen and (width<450px) {
     .cards {
         grid-template-columns: repeat(3, 1fr);
@@ -872,6 +911,9 @@ button {
     .card img {
         height: 8rem;
         width: 8rem;
+    }
+    .playlistlist{
+        left: 15%;
     }
 }
 
