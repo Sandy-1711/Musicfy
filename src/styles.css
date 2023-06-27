@@ -439,8 +439,8 @@ li svg {
     position: absolute;
     display: flex;
     flex-direction: column;
-    right: 3rem;
-    top: 5rem;
+    right: 7rem;
+    top: 7rem;
     padding: 3rem 1rem;
     background-color: #7f7f7f;
     border: 1px solid grey;

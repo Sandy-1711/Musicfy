@@ -30,6 +30,7 @@ const Playlists = () => {
             </div>
             <div className='delete playlistdelete'><DeleteIcon onClick={function(){
                 localStorage.removeItem(element);
+                // setSelectedPlaylist([])
                 var a = JSON.parse(localStorage.getItem('playlist'));
                             var index = a.findIndex(function (item) {
                                 return item.key === element.key;
@@ -136,6 +137,7 @@ const Playlists = () => {
                         {playlists.map(createPlaylist)}
                     </div> : <div><h1>No Playlists found</h1></div>
                 }
+            </div>
                 {
                     showCreatePlaylist && <div className='plpagelistlist'>
                         <div className='clear' onClick={function () {
@@ -145,18 +147,18 @@ const Playlists = () => {
                         <button onClick={handleNewPlaylistButton}>Create</button>
                     </div>
                 }
-            </div>
             
-            <div>
+            { playlists[0] ? <div>
+            
                 {selectedPlaylist ? <div className='cardsContainer playlistCardContainer'>
-                    <div className='cards'>
+                    { playlists && <div className='cards'>
 
                         {JSON.parse(localStorage.getItem(selectedPlaylist)).map(CreateCard)}
                         
-                    </div>
+                    </div>}
                 </div>
                     : <div className='cardsContainer'><h2>Select a playlist to open it</h2></div>}
-            </div>
+            </div> : <div className='cardsContainer'><h1>No playlists found</h1></div>}
         </div>
 
     </>
