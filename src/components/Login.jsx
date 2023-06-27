@@ -11,6 +11,7 @@ const Login = () => {
         password: "",
     });
     async function loginPost() {
+        var check=false;
         await fetch('https://musicfyapi.sandeepsingh126.repl.co/api/auth/login', {
             method: 'POST',
             mode: 'cors',
@@ -19,11 +20,22 @@ const Login = () => {
                 'Content-Type': 'application/json'
             }
         }).then(function (response) {
+            if(response.status===200)
+            {
+                check=true;
+            }
             return response.json();
         }).then(function (json) {
 
             updateUser(json);
-            navigate('/')
+            if(check)
+            {
+                navigate('/');
+            }
+            else
+            {
+                alert('Wrong Credentials');
+            }
             return json;
         }).catch(function (err) {
             console.log(err);

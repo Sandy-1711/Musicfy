@@ -11,6 +11,7 @@ const Register = () => {
         email: "",
     });
     async function signupPost() {
+        var check=false;
         await fetch('https://musicfyapi.sandeepsingh126.repl.co/api/auth/signup', {
             method: 'POST',
             body: JSON.stringify(formData),
@@ -19,10 +20,21 @@ const Register = () => {
             },
             mode: 'cors'
         }).then(function (response) {
+            if(response.status===200)
+            {
+                check=true;
+            }
             return response.json();
         }).then(function (json) {
             updateUser(json);
-            navigate('/')
+            if(check===true)
+            {
+
+                navigate('/')
+            }
+            else{
+                alert('Error creating account')
+            }
             console.log(json);
             return json;
         }).catch(function (err) {
