@@ -5,13 +5,13 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
     // localStorage.removeItem('user');
     const { updateUser } = useContext(AuthContext);
-    const navigate=useNavigate()
+    const navigate = useNavigate()
     var [formData, setFormData] = useState({
         username: "",
         password: "",
     });
     async function loginPost() {
-        var check=false;
+        var check = false;
         await fetch('https://musicfyapi.sandeepsingh126.repl.co/api/auth/login', {
             method: 'POST',
             mode: 'cors',
@@ -20,20 +20,17 @@ const Login = () => {
                 'Content-Type': 'application/json'
             }
         }).then(function (response) {
-            if(response.status===200)
-            {
-                check=true;
+            if (response.status === 200) {
+                check = true;
             }
             return response.json();
         }).then(function (json) {
 
             updateUser(json);
-            if(check)
-            {
+            if (check) {
                 navigate('/');
             }
-            else
-            {
+            else {
                 alert('Wrong Credentials');
             }
             return json;
@@ -58,17 +55,17 @@ const Login = () => {
     }
     return (
         <div className='homePage loginPage'>
-        <div className='loginCard'>
-            <h2>Welcome Back</h2>
-            <form>
-                <input required onChange={handleChange} value={formData.username} type='text' name='username' placeholder='Username' />
-                <input required onChange={handleChange} type='password' value={formData.password} name='password' placeholder='Password' />
-                <button onClick={handleSubmit}>Submit</button>
-            </form>
-            <span onClick={function(){
-                navigate('/register')
-            }}>New to Musicfy, <a>register</a> here</span>
-        </div>
+            <div className='loginCard'>
+                <h2>Welcome Back</h2>
+                <form>
+                    <input required onChange={handleChange} value={formData.username} type='text' name='username' placeholder='Username' />
+                    <input required onChange={handleChange} type='password' value={formData.password} name='password' placeholder='Password' />
+                    <button onClick={handleSubmit}>Submit</button>
+                </form>
+                <span onClick={function () {
+                    navigate('/register')
+                }}>New to Musicfy, <a>register</a> here</span>
+            </div>
         </div>
     )
 }

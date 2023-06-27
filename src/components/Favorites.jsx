@@ -39,7 +39,7 @@ const Favorites = () => {
     return (
         <>
             {/* <Sidebar /> */}
-            <div className='homePage'>
+            <div className='homePage favPage'>
                 <div>
                     {
 

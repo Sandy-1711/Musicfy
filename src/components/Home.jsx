@@ -90,7 +90,7 @@ const Home = () => {
                     </div>
                 }
 
-                <div className='cardsContainer'>
+                <div className='cardsContainer pl'>
                     <h2>Playlists</h2>
                     {playlists ?
 
@@ -103,6 +103,8 @@ const Home = () => {
                         </div> : <div className='cardsContainer'><h1>No Playlists found</h1></div>
                     }
                 </div>
+                <div className='ppp'>
+
                 {
                     showCreatePlaylist && <div className='playlistlist'>
                         <div className='clear' onClick={function () {
@@ -113,6 +115,9 @@ const Home = () => {
                         <button onClick={handleNewPlaylistButton}>Create</button>
                     </div>
                 }
+                </div>
+                <div className='ppp'>
+
                 {showPlaylists && <div className='playlistlist'>
                     <div className='clear' onClick={function () {
                         setShowPlaylists(false)
@@ -135,6 +140,7 @@ const Home = () => {
                         playlist.push();
                     }}>Create Playlist</button>
                 </div>}
+                </div>
 
             </div>
         </>

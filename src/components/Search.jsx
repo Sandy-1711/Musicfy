@@ -89,7 +89,7 @@ const Search = () => {
 
     return (
         <>
-            <div className='homePage'>
+            <div className='homePage sp'>
                 <div className='searchArea'>
                     <form onChange={
                         handleChange}

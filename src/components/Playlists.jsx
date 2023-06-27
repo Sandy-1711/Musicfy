@@ -23,25 +23,29 @@ const Playlists = () => {
             <img src={playlist ? playlist.images.background : null} alt={playlist ? playlist.title : null} />
             <div className='cardInfo playlistCardInfo'>
 
-                <h2>{element.substr(9,7)}</h2>
+                <h2>{element.substr(9, 7)}</h2>
             </div>
             <div className='play playlistplay'>
                 <PlayCircleFilledWhiteIcon />
             </div>
-            <div className='delete playlistdelete'><DeleteIcon onClick={function(){
-                localStorage.removeItem(element);
-                // setSelectedPlaylist([])
-                var a = JSON.parse(localStorage.getItem('playlist'));
-                            var index = a.findIndex(function (item) {
-                                return item.key === element.key;
-                            });
-                            if (index !== -1) {
+            <div className='delete playlistdelete'><DeleteIcon onClick={function () {
 
-                                a.splice(index, 1);
-                            }
-                            localStorage.setItem('playlist', JSON.stringify(a))
-                
-            }}/></div>
+                setSelectedPlaylist(undefined);
+
+                var a = JSON.parse(localStorage.getItem('playlist'));
+
+
+                var index = a.findIndex(function (item) {
+                    return item === element;
+                });
+                console.log(index);
+
+                a.splice(index, 1);
+
+                localStorage.setItem('playlist', JSON.stringify(a))
+                localStorage.removeItem(element);
+                console.log(JSON.parse(localStorage.getItem('playlist')))
+            }} /></div>
 
         </div>
     }
@@ -138,23 +142,24 @@ const Playlists = () => {
                     </div> : <div><h1>No Playlists found</h1></div>
                 }
             </div>
-                {
-                    showCreatePlaylist && <div className='plpagelistlist'>
-                        <div className='clear' onClick={function () {
-                            setShowCreatePlaylist(false)
-                        }}><ClearIcon /></div>
-                        <input required type="text" onChange={handleChange} placeholder="New Playlist" />
-                        <button onClick={handleNewPlaylistButton}>Create</button>
-                    </div>
-                }
-            
-            { playlists[0] ? <div>
-            
-                {selectedPlaylist ? <div className='cardsContainer playlistCardContainer'>
-                    { playlists && <div className='cards'>
+
+            {
+                showCreatePlaylist && <div className='plpagelistlist'>
+                    <div className='clear' onClick={function () {
+                        setShowCreatePlaylist(false)
+                    }}><ClearIcon /></div>
+                    <input required type="text" onChange={handleChange} placeholder="New Playlist" />
+                    <button onClick={handleNewPlaylistButton}>Create</button>
+                </div>
+            }
+
+            {localStorage.getItem('playlist') ? <div>
+            {/* {console.log(selectedPlaylist)} */}
+                {JSON.parse(localStorage.getItem(selectedPlaylist)) ? <div className='cardsContainer playlistCardContainer'>
+                    {playlists && <div className='cards'>
 
                         {JSON.parse(localStorage.getItem(selectedPlaylist)).map(CreateCard)}
-                        
+
                     </div>}
                 </div>
                     : <div className='cardsContainer'><h2>Select a playlist to open it</h2></div>}
